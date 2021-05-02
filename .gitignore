@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # environment
-.idea
+*.idea
+*.DS_Store
