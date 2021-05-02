@@ -11,13 +11,11 @@ def generate(length):
     # create a string variable to save the password in it
     password = ""
 
-    if length < 10:
-        return "Your password is too short! It should have min 10 characters!"
-    else:
-        for i in range(length):
-            # choose a random character from the "characters" variable "length" times
-            password = password + secrets.choice(characters)
-        return password
+    for i in range(length):
+        # choose a random character from the "characters" variable "length" times
+        password = password + secrets.choice(characters)
+
+    return password
 
 
 if __name__ == "__main__":
