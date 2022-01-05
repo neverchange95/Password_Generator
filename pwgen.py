@@ -35,5 +35,30 @@ if __name__ == "__main__":
             else:
                 checkInput = True
 
+    running = True
+    password = ""
+
+    # generate a new password with min 1 digit, 1 character and 1 punctuation
+    while running:
+        password = generate(int(length))
+
+        number = False
+        character = False
+        punctuation = False
+
+        for i in range(0, len(password)):
+            if password[i] in string.digits:
+                number = True
+            if password[i] in string.punctuation:
+                punctuation = True
+            if password[i] in string.ascii_letters:
+                character = True
+
+
+        if not number or not punctuation or not character:
+            running = True
+        else:
+            running = False
+
     # call generate() and cast the length variable to int
-    print("Here is your password:\n\n" + generate(int(length)))
+    print("Here is your password:\n\n" + password)
